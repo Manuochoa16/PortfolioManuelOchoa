@@ -2,3 +2,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-multiple-ellipses {
+    background-image: radial-gradient(
+        circle at 20% 30%,
+        rgb(20, 20, 24),
+        rgba(18, 18, 27, 0.7) 40%,
+        transparent
+      ),
+      radial-gradient(
+        ellipse at 40% 80%,
+        rgba(93, 9, 104, 0.6),
+        rgba(64, 6, 72, 0.7) 20%,
+        transparent
+      ),
+      radial-gradient(
+        ellipse at 70% 60%,
+        rgba(5, 5, 119, 0.7),
+        rgba(8, 8, 84, 0.7) 1000%,
+        transparent
+      );
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .animation-gradient-move {
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  @apply bg-multiple-ellipses bg-fixed;
+}

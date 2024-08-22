@@ -4,10 +4,10 @@ $quantity: 50;
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 0.2vw; // Tamaño más pequeño
-  height: 0.2vw; // Tamaño más pequeño
+  width: 0.1vw;
+  height: 0.1vw;
   margin: -0.1vw 0 0 4.9vw;
-  animation: move 3600s ease alternate infinite; // Movimiento lento
+  animation: move 3600s ease alternate infinite;
   pointer-events: none;
 
   &::before,
@@ -21,22 +21,22 @@ $quantity: 50;
   }
 
   &::before {
-    background: rgba(255, 255, 255, 0.7); // Menos opaco para menos brillo
+    background: rgba(255, 255, 255, 0.7);
     opacity: 1;
     animation: none;
-    box-shadow: 0 0 0.5vw 0.1vw rgba(255, 255, 255, 0.4); // Sombra más pequeña y menos brillante
+    box-shadow: 0 0 0.5vw 0.1vw rgba(255, 255, 255, 0.4);
   }
 
   &::after {
-    display: none; // Ocultar brillo adicional
+    display: none;
   }
 }
 
 @for $i from 1 through $quantity {
   $steps: random(12) + 16;
-  $rotationSpeed: 180000s; // Rotación extremadamente lenta
-  $fadeDelay: random(20s); // Delay aleatorio para desvanecimiento
-  $fadeCycle: random(30s) + 5s; // Ciclo de desvanecimiento aleatorio
+  $rotationSpeed: 180000s;
+  $fadeDelay: random(20s);
+  $fadeCycle: random(30s) + 5s;
 
   .firefly:nth-child(#{$i}) {
     animation-name: move#{$i};
@@ -44,11 +44,8 @@ $quantity: 50;
     animation-delay: 0s;
 
     &::before {
-      animation: fade
-        #{$fadeCycle}
-        ease-in-out
-        infinite; // Ciclo infinito con duración aleatoria
-      animation-delay: #{$fadeDelay}; // Asignar delay aleatorio a cada luciérnaga
+      animation: fade #{$fadeCycle} ease-in-out infinite;
+      animation-delay: #{$fadeDelay};
     }
   }
 

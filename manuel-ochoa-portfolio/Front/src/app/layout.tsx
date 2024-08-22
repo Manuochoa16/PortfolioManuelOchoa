@@ -21,9 +21,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <title>Manuel Ochoa</title>
       </head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} min-h-screen bg-custom-radial-gradient bg-cover bg-fixed`}
+      >
         <Navbar />
-        <main className="flex-1 p-5 pt-20">{children}</main>
+        <main className="relative flex-1 p-5 pt-20">{children}</main>
       </body>
     </html>
   );

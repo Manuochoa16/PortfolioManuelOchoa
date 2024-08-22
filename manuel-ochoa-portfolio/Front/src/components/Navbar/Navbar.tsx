@@ -4,8 +4,7 @@ import Link from "next/link";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="bg-gray-800 text-white w-full p-5 fixed top-0 z-10">
-      <h2 className="text-2xl font-bold mb-3 inline-block mr-10">Menú</h2>
+    <div className=" text-white w-full p-5 fixed top-0 z-10">
       <ul className="flex space-x-6">
         <li>
           <Link href="/" className="hover:text-blue-400">
@@ -14,7 +13,7 @@ const Navbar: React.FC = () => {
         </li>
         <li>
           <Link href="/about" className="hover:text-blue-400">
-            Sobre Nosotros
+            Sobre Mi
           </Link>
         </li>
         <li>
