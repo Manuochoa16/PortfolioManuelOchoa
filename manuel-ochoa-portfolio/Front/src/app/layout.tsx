@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,10 +21,12 @@ export default function RootLayout({
         <title>Manuel Ochoa</title>
       </head>
       <body
-        className={`${inter.className} min-h-screen bg-custom-radial-gradient bg-cover bg-fixed`}
+        className={`${inter.className} min-h-screen flex flex-col bg-custom-radial-gradient bg-cover bg-fixed`}
       >
         <Navbar />
-        <main className="relative flex-1 p-5 pt-20">{children}</main>
+        <main className="flex-1 p-5 pt-20 flex items-center justify-center">
+          {children}
+        </main>
       </body>
     </html>
   );
